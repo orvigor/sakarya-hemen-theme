@@ -2003,3 +2003,148 @@ section.ResimGaleri .Main .Marquee-tag:hover:after { content: ''; position: abso
     body #mainHolder_divDesign .hazirBlokContent .txrow .txcol-12, body #mainHolder_divDesign .hazirBlokContent .txrow .txcol-sm, body #mainHolder_divDesign .hazirBlokContent .txrow .txcol-sm-1, body #mainHolder_divDesign .hazirBlokContent .txrow .txcol-sm-10, body #mainHolder_divDesign .hazirBlokContent .txrow .txcol-sm-11, body #mainHolder_divDesign .hazirBlokContent .txrow .txcol-sm-12, body #mainHolder_divDesign .hazirBlokContent .txrow .txcol-sm-2, body #mainHolder_divDesign .hazirBlokContent .txrow .txcol-sm-3, body #mainHolder_divDesign .hazirBlokContent .txrow .txcol-sm-4, body #mainHolder_divDesign .hazirBlokContent .txrow .txcol-sm-5, body #mainHolder_divDesign .hazirBlokContent .txrow .txcol-sm-6, body #mainHolder_divDesign .hazirBlokContent .txrow .txcol-sm-7, body #mainHolder_divDesign .hazirBlokContent .txrow .txcol-sm-8, body #mainHolder_divDesign .hazirBlokContent .txrow .txcol-sm-9{padding: 0!important;margin:0!important;}
 
 }
+/* ========================================================== */
+/* SAKARYA HEMEN ÖZEL TEMA STİLLERİ (KAPSAMLANMIŞTIR) */
+/* ========================================================== */
+
+body.sakarya-hemen-active {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+}
+
+body.sakarya-hemen-active header {
+    width: 100%;
+    background-color: #f1ede7 !important; /* Tema rengi override */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+body.sakarya-hemen-active .navigation {
+    display: flex;
+    justify-content: center;
+}
+
+body.sakarya-hemen-active .sakaryaMenuNav .sakaryaMenuList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+body.sakarya-hemen-active .sakaryaMenuNav .sakaryaMenuList li {
+    position: relative;
+}
+
+body.sakarya-hemen-active .sakaryaMenuNav .sakaryaMenuList li a {
+    display: block;
+    padding: 15px 0;
+    text-decoration: none;
+    color: #4d270d; /* Kahverengi */
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+body.sakarya-hemen-active .sakaryaMenuNav .sakaryaMenuList li a:hover {
+    color: #f2a900; /* Turuncu */
+}
+
+/* RESİMLİ ALT KATEGORİ KUTUSU */
+body.sakarya-hemen-active .sakaryaAltKategoriBox {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    min-width: 900px;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    display: none; /* JS ile kontrol edilir */
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* ALT KATEGORİ ÖĞESİ */
+body.sakarya-hemen-active .sakaryaAltItem {
+    width: 130px;
+    text-align: center;
+    text-decoration: none;
+    color: #4d270d;
+    display: block;
+    transition: transform 0.2s;
+}
+
+body.sakarya-hemen-active .sakaryaAltItem:hover {
+    transform: translateY(-3px);
+    color: #f2a900;
+}
+
+body.sakarya-hemen-active .sakaryaAltIcon {
+    width: 100%;
+    height: 90px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+body.sakarya-hemen-active .sakaryaAltIcon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+body.sakarya-hemen-active .sakaryaAltText {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+/* ========================================================== */
+/* MOBİL DÜZENLEMELER */
+/* ========================================================== */
+
+@media (max-width: 767px) {
+    /* Genel mobil menü stillerinin üzerine yazılır */
+    body.sakarya-hemen-active header {
+        box-shadow: none;
+    }
+    
+    /* Mobil menü tetikleyicisi veya ilgili mobil navigasyon öğeleri için stiller */
+    /* Mobil menü box'ının arkaplanı veya rengi gibi tamamen görsel farklılıklar buraya gelmelidir. */
+    /* Örn: body.sakarya-hemen-active .mobilMenuAcButton { background: #f2a900; } */
+    
+    /* Mobil görünümde alt kategori kutusu */
+    body.sakarya-hemen-active .sakaryaAltKategoriBox {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        min-width: auto;
+        box-shadow: none;
+        border: none;
+        padding: 10px;
+        /* JS tarafından slideDown/Up ile yönetileceği için display:none kalabilir */
+    }
+
+    /* Mobil menü içindeki kategori öğeleri */
+    body.sakarya-hemen-active .sakaryaAltItem {
+        width: 30%; /* 3'lü dizilim */
+        margin-bottom: 10px;
+    }
+
+    body.sakarya-hemen-active .sakaryaAltKategoriBox .sakaryaAltItem:last-child {
+        margin-right: 0;
+    }
+
